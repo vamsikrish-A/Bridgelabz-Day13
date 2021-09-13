@@ -54,6 +54,16 @@ public class GenericsMaximumTest {
             max = z; //z is the largest
         return max;
     }
+    //Extends the max method to take more then three parameters
+    public static <T extends Number & Comparable<T>> T maximumNC(T x, T y, T z) {
+        T max = x; //Assuming x is the initially largest
+
+        if (y.compareTo(max) > 0)
+            max = y; //y is the largest so far
+        if (z.compareTo(max) > 0)
+            max = z; //z is the largest
+        return max;
+    }
 
     public static void main(String[] args) {
         System.out.println(" `Welcome to Generics` ");
@@ -71,10 +81,20 @@ public class GenericsMaximumTest {
         int maxGenericInt = maximumWithGenerics(6,7,8);
         double maxGenericDouble = maximumWithGenerics(6.6,7.7,5.5);
         String maxGenericString = maximumWithGenerics("Apple","Banana","Peach");
+
+        //print statements
         System.out.println("maximum Integer number with Generic method is: "+maxGenericInt);
         System.out.println("maximum Float number with Generic method is: "+maxGenericDouble);
         System.out.println("maximum String with Generic method is: "+maxGenericString);
 
+        //calling max method generic
+        int maxGenericIntNC = maximumNC(6,7,8);
+        System.out.println("maximum : "+maxGenericIntNC);
+
+        double maxGenericDoubleNC = maximumNC(6.6,7.7,8.8);
+        System.out.println("maximum of double: "+maxGenericDoubleNC);
+
+        
     }
     
 }
