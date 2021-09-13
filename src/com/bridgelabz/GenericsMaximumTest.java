@@ -1,6 +1,13 @@
 package com.bridgelabz;
 
 public class GenericsMaximumTest {
+    /*
+    * @Author: VamsiKrishna A.
+    *
+    * @purpose: Find maximum Problem using Generics
+    *
+    * @date: 07/09/2021.
+    * */
     public static <Integer extends Comparable<Integer>> Integer maximum(Integer x, Integer y, Integer z) {
         Integer max = x; //Assuming x is initially the largest
 
