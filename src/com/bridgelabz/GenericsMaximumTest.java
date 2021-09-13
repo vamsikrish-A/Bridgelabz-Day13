@@ -32,15 +32,30 @@ public class GenericsMaximumTest {
         return  max;
 
     }
+    public static <String extends Comparable<String>> String maximumString(String x, String y, String z) {
+        String max = x; //Assuming x is initially the largest
+
+        if (y.compareTo(max) > 0)
+            max = y; // y is the largest so far
+
+        if (z.compareTo(max) > 0)
+            max = z; // z is the largest
+
+        return  max;
+
+    }
 
     public static void main(String[] args) {
         System.out.println(" `Welcome to Generics` ");
-        //calling out  Integer method
+        //calling out  Integer method.
         int maximumIntNumber = maximum(6,7,5);
         System.out.println("maximum integer number:"+maximumIntNumber);
-        //calling out Float method
+        //calling out Float method.
         double maximumFloatNumber = maximumFloat(6.6, 7.7, 5.5);
         System.out.println("maximum float number:"+maximumFloatNumber);
+        //calling out String method.
+        String maximumStringVariable = maximumString("Apple","Cherry","Peach");
+        System.out.println("maximum String variable: "+maximumStringVariable);
     }
 
 
